@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shift Plan Table</title>
-    <button id="editButton">Edit</button>
     <style>
         table {
             width: 100%;
@@ -19,16 +18,40 @@
         th {
             background-color: #f4f4f4;
         }
+        .button-container {
+            margin-bottom: 20px;
+        }
+        .button-container button {
+            margin-right: 10px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h2>Shift Plan Table</h2>
+
+    <!-- 8 Buttons for different tables -->
+    <div class="button-container">
+        <button onclick="loadShiftPlan('tes_ets_shift_plan_jan')">TES ETS Shift Plan</button>
+        <button onclick="loadShiftPlan('tes_ets_shift_plan_feb')">TES ETS Shift Lead Plan</button>
+        <button onclick="loadShiftPlan('tes_ets_shift_plan_mar')">TES SAP Shift Plan</button>
+        <button onclick="loadShiftPlan('tes_ets_shift_plan_apr')">TES SAP Shift Lead Plan</button>
+        <button onclick="loadShiftPlan('tes_ets_shift_plan_may')">TES SLM Shift Plan</button>
+        <button onclick="loadShiftPlan('tes_ets_shift_plan_jun')">TES SLM Shift Lead Plan</button>
+        <button onclick="loadShiftPlan('tes_ets_shift_plan_jul')">TES ETS SLM Shift Plan</button>
+        <button onclick="loadShiftPlan('tes_ets_shift_plan_aug')">TES ETS SLM Shift Lead Plan</button>
+    </div>
+
+    <button id="editButton">Edit</button>
+
     <table id="shiftTable">
         <thead>
             <tr id="tableHeader"></tr>
         </thead>
         <tbody id="tableBody"></tbody>
     </table>
+
     <script src="index.js"></script>
 </body>
 </html>
